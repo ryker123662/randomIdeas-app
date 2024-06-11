@@ -2,7 +2,7 @@ import axios from 'axios';
 
 class IdeasApi {
   constructor() {
-    this._apiUrl = 'http://localhost:4000/api/ideas';
+    this._apiUrl = '/api/ideas';
   }
   // this returns a Promise
   getIdeas() {
@@ -21,7 +21,7 @@ class IdeasApi {
   deleteIdea(id) {
     // get the username from the localStorage if it's there if not set the variable to empty string
     const username = localStorage.getItem('username') ? localStorage.getItem('username') : '';
-    // use delete method on axios and pass the url (http://localhost:4000/api/ideas/id) and the object where data equals our username variable
+    // use delete method on axios and pass the url (http://localhost:4000/api/ideas/id) and the object where data equals our username
     return axios.delete(`${this._apiUrl}/${id}`, {
       data: {
         username,
